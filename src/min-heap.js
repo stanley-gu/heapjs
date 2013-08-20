@@ -19,10 +19,9 @@ MinHeap.prototype.setArray = function(array) {
     this.array = array;
 };
 /**
- * My method description.  Like other pieces of your comment blocks,
- * this can span multiple lines.
+ * Gets the contents of the parent node to node at the specified index.
  *
- * @method getChildren
+ * @method getParent
  * @param {Number} index Index of element to get the children indices of
  * @return {Number} Returns value of parent
  */
@@ -32,10 +31,10 @@ MinHeap.prototype.getParent = function (index) {
 };
 
 /**
- * My method description.  Like other pieces of your comment blocks,
- * this can span multiple lines.
+ * Returns an array containing the contents of the children nodes, or null if
+ * none exist.
  *
- * @method getChildrenInds
+ * @method getChildren
  * @param {Number} index Index of element to get the children indices of
  * @return {Array} Returns values containing children, null if no children
  */
@@ -53,8 +52,8 @@ MinHeap.prototype.getChildren = function (index) {
 
 
 /**
- * My method description.  Like other pieces of your comment blocks,
- * this can span multiple lines.
+ * Gets array of children indices. Note: Children may not yet exist at the given
+ * indices.
  *
  * @method getChildrenInds
  * @param {Number} index Index of element to get the children indices of
@@ -65,10 +64,9 @@ MinHeap.prototype.getChildrenInds = function (index) {
 };
 
 /**
- * My method description.  Like other pieces of your comment blocks,
- * this can span multiple lines.
+ * Gets index of parent
  *
- * @method getParent
+ * @method getParentInd
  * @param {Number} index Index of element to get the parent index of
  * @return {Number} Returns index of parent
  */

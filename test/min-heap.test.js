@@ -34,7 +34,6 @@ describe('The Heap array indexing functions', function() {
     });
     
     it('should return child values', function() {
-        debugger;
         expect(minHeap.getChildren(0)).toEqual(['b', 'c']);
         expect(minHeap.getChildren(1)).toEqual(['d', 'e']);
         expect(minHeap.getChildren(2)).toEqual([null, null]);
