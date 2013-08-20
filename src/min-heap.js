@@ -42,7 +42,7 @@ MinHeap.prototype.getParent = function (index) {
 MinHeap.prototype.getChildren = function (index) {
     var childrenInds = this.getChildrenInds(index);
     var children = childrenInds.map(function(i) {
-        if (i > this.array.length) {
+        if (i > this.array.length - 1) {
             return null;
         } else {
             return this.array[i];
