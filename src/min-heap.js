@@ -18,6 +18,33 @@ var MinHeap = function() {
 MinHeap.prototype.setArray = function(array) {
     this.array = array;
 };
+
+
+MinHeap.prototype.getMin = function() {
+    return this.array[0];
+};
+
+
+MinHeap.prototype.insert = function(item) {
+    this.array.push(item);
+    this.bubbleUp(this.array.length - 1);
+};
+
+MinHeap.prototype.bubbleUp = function(index) {
+    var parentInd = this.getParentInd(index);
+    while (this.array[index] < this.array[parentInd]) {
+        // swap
+        var value = this.array[index];
+        this.array[index] = this.array[parentInd];
+        this.array[parentInd] = value;
+        
+        // update
+        index = parentInd;
+        parentInd = this.getParentInd(index);
+    }
+};
+
+
 /**
  * Gets the contents of the parent node to node at the specified index.
  *
