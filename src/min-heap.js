@@ -6,7 +6,7 @@
 
 
 /**
-* A Min-Heap
+* Min-Heap
 *
 * @class MinHeap
 * @constructor
@@ -43,6 +43,54 @@ MinHeap.prototype.bubbleUp = function(index) {
         parentInd = this.getParentInd(index);
     }
 };
+
+
+MinHeap.prototype.pop = function() {
+    this.array[0] = this.array[this.array.length - 1];
+    this.array.pop();
+    this.bubbleDown();
+};
+
+MinHeap.prototype.bubbleDown = function() {
+    var index = 0;
+    while (true) {
+        var childrenInds = this.getChildrenInds(index);
+        var children = this.getChildren(index);
+    
+        var left = (children[0] && (this.array[index] > children[0]))  
+        var right = (children[1] && (this.array[index] > children[1]))
+        
+        debugger;
+        if (!left && !right) {
+            break;
+        }
+        
+        if (left && right) {
+            if (children[0] < children[1]) {
+                var value = this.array[index];
+                this.array[index] = children[0];
+                this.array[childrenInds[0]] = value;
+                index = childrenInds[0];
+            } else {
+                var value = this.array[index];
+                this.array[index] = children[1];
+                this.array[childrenInds[1]] = value;
+                index = childrenInds[1];
+            }
+        } else if (left) { // swap left
+            var value = this.array[index];
+            this.array[index] = children[0];
+            this.array[childrenInds[0]] = value;
+            index = childrenInds[0];
+        } else { // swap right
+            var value = this.array[index];
+            this.array[index] = children[1];
+            this.array[childrenInds[1]] = value;
+            index = childrenInds[1];
+        }
+    }
+};
+
 
 
 /**

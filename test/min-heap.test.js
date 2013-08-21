@@ -50,10 +50,26 @@ describe('Insert', function() {
         minHeap.setArray([1, 2, 3, 4, 5])
     });
     
-    it('should move bubble up smaller values', function() {
+    it('should bubble up smaller values', function() {
         minHeap.insert(2);
         expect(minHeap.array).toEqual([1, 2, 2, 4, 5, 3]);
         minHeap.insert(0);
         expect(minHeap.array).toEqual([0, 2, 1, 4, 5, 3, 2]);
+    });
+});
+
+
+describe('Pop', function() {
+    
+    beforeEach(function() {
+        minHeap = new MinHeap();
+        minHeap.setArray([1, 2, 3, 4, 5])
+    });
+    
+    it('should bubble down smaller values', function() {
+        minHeap.pop();
+        expect(minHeap.array).toEqual([2, 4, 3, 5]);
+        minHeap.pop();
+        expect(minHeap.array).toEqual([3, 4, 5]);
     });
 });
